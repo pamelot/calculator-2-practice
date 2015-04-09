@@ -16,32 +16,38 @@ def main():
     while cond:
         input = raw_input("> ")
         numbers = input.split(' ')
-        if numbers[0] == "+":
-            addition = add(int(numbers[1]), int(numbers[2]))
-            print addition
-        elif numbers[0] == "-":
-            subtraction = subtract(int(numbers[1]), int(numbers[2]))
-            print subtraction
-        elif numbers[0] == "*":
-            multiplication = multiply(int(numbers[1]), int(numbers[2])) 
-            print multiplication
-        elif numbers[0] == "/":
-            division = divide(float(numbers[1]), float(numbers[2]))
-            print division
-        elif numbers[0] == "square":
-            squaring = square(int(numbers[1]))
-            print squaring
-        elif numbers[0] == "cube":
-            cubed = cube(int(numbers[1]))
-            print cubed
-        elif numbers[0] == "pow":
-            powered = power(int(numbers[1]), int(numbers[2]))
-            print powered
-        elif numbers[0] == "mod":
-            module = mod(int(numbers[1]), int(numbers[2]))
-            print module
-        elif numbers[0] == "q":
-            break
+
+        try:
+            if numbers[0] == "+":
+                addition = add(int(numbers[1]), int(numbers[2]))
+                print addition
+            elif numbers[0] == "-":
+                subtraction = subtract(int(numbers[1]), int(numbers[2]))
+                print subtraction
+            elif numbers[0] == "*":
+                multiplication = multiply(int(numbers[1]), int(numbers[2])) 
+                print multiplication
+            elif numbers[0] == "/":
+                division = divide(float(numbers[1]), float(numbers[2]))
+                print division
+            elif numbers[0] == "square":
+                squaring = square(int(numbers[1]))
+                print squaring
+            elif numbers[0] == "cube":
+                cubed = cube(int(numbers[1]))
+                print cubed
+            elif numbers[0] == "pow":
+                powered = power(int(numbers[1]), int(numbers[2]))
+                print powered
+            elif numbers[0] == "mod":
+                module = mod(int(numbers[1]), int(numbers[2]))
+                print module
+            elif numbers[0] == "q":
+                break
+            else:
+                print "Looks like you're not using our syntax! Try again!"    
+        except ValueError:
+            print "Value Error: Please type an integer!"   
 
 if __name__ == '__main__':
     main()
