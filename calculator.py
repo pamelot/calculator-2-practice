@@ -37,7 +37,10 @@ def main():
                 cubed = cube(int(numbers[1]))
                 print cubed
             elif numbers[0] == "pow":
-                powered = power(int(numbers[1]), int(numbers[2]))
+                if (float(numbers[2]) <= 0) or (float(numbers[1]) <=0):
+                    powered = power((float(numbers[1])), (float(numbers[2])))
+                else:
+                    powered = power(float(numbers[1]), float(numbers[2]))
                 print powered
             elif numbers[0] == "mod":
                 module = mod(int(numbers[1]), int(numbers[2]))
